@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ================ ALL-VARIABLES ================ */
+/* ================ FONT-SIZE ================ */
+$font-family: "Montserrat", sans-serif;
+$font-title: 1.5rem;
+$font-normal: 1rem;
+$font-small: 0.8rem;
+$font-xsmall: 0.6rem;
+/* ================ FONT-COLOR ================ */
+$comment-color: #c8c8c8;
+$text-color: #fff;
+/* ================ FONT-WEIGHT ================ */
+$font-normal: 400;
+$font-semi-bold: 500;
+$font-bold: 700;
+/* ================ COLORS ================ */
+$bg-color: #000;
+$dark-color: #747474;
+$light-color: #d6d5d5;
+/* ================ Z-INDEX ================ */
+$z-top: 1000;
+$z-bottom: 10;
+
+/* ================ MIXINS ================ */
+
+/* ================ EXTENDS ================ */
+
+/* ================ RESET ================ */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $font-family;
+  font-weight: $font-normal;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $bg-color;
+  width: 100vw;
+  height: auto;
+}
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.main {
+  overflow: hidden;
+}
+.img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.hidden {
+  display: none;
+}
+
+/* ================ MAIN-STYLE ================ */
+.header {
+  /* ================ HEADER NAV ================ */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  border-bottom: 1px solid $comment-color;
+  background-color: $bg-color;
+  z-index: $z-top;
+  .nav {
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav__logo {
+    color: $text-color;
+    letter-spacing: 3px;
+    font-weight: $font-semi-bold;
+  }
+  .nav-toggle,
+  .nav-close {
+    color: $text-color;
+    cursor: pointer;
+    font-size: $font-title;
+  }
+}
+
+/* ================ NAVIGATION FOR MOBILE DEVICES ================ */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    width: 100%;
+    top: -100%;
+    left: 0;
+    border-bottom: 1px solid $comment-color;
+    background-color: $bg-color;
+    padding-block: 4.5rem 3.5rem;
+    transition: top 0.4s;
+    .nav__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2rem;
+
+      .nav__link {
+        color: $comment-color;
+        letter-spacing: 3px;
+        transition: color 0.3s;
+        font-weight: $font-semi-bold;
+        &:hover {
+          color: $text-color;
+        }
+      }
+    }
+  }
+  .nav__social {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    .nav__social-link {
+      color: $comment-color;
+      padding-inline: 1.5rem;
+      transition: color 0.3s;
+      font-size: $font-title;
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+  .nav-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
